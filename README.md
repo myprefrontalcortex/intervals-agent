@@ -74,6 +74,14 @@ For this analysis to be reproducible, it's critical to understand how the founda
 
 ---
 
+## 📊 Sample Data for Reproducibility
+
+To enable others (or yourself!) to quickly reproduce the figures and analysis without needing to connect to the Intervals.icu API or parse raw Xert `.tcx` files, a sample version of the final processed dataset is included:
+
+-   **`race_analysis_with_xert.csv`**: This file represents the complete, merged dataset used directly by the plotting and correlation scripts. By using this file, you can run all the analysis and figure generation scripts immediately after cloning the repository.
+
+---
+
 ## 🛠️ Getting Started
 
 ### Prerequisites
