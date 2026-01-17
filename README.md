@@ -8,7 +8,7 @@ This project bridges the gap between your daily wellness metrics and your actual
 - **Correlation Analysis**: Calculates the relationship between pre-race variables (Fitness, Fatigue, Form, Resting HR, HRV, Sleep) and race outcomes.
 - **Xert Integration**: Includes specialized parsers for `.tcx` files to extract advanced power metrics and merge them with physiological data.
 - **Outlier Identification**: Automatically flags "negative outliers" to help you analyze why certain races didn't go according to plan.
-- **Visual Dashboards**: Generates publication-ready scatter plots and correlation heatmaps.
+- **Visual Dashboards**: Generates publication-ready scatter plots and correlation heatmaps. See examples: [Correlation Dashboard](figures/xert_correlation_dashboard.jpg), [Correlation Heatmap](figures/Xert_Correlations.png).
 
 ---
 
@@ -38,7 +38,17 @@ The agent processes your data in a sequence to ensure everything is correctly al
 
 The final step is to translate the numerical analysis into clear, easy-to-interpret visuals. The scripts generate the figures you've seen, which help tell the story of your data:
 *   **Scatter Plots**: Show the raw relationship between a single metric (like 7-day average sleep) and your performance.
-*   **Heatmap & Dashboard**: Provide a high-level summary of which factors have the strongest positive or negative correlation with your race results.
+    *   [Fitness (CTL) vs. Performance Score](figures/Fitness_CTL,_day_pre-race_vs_Performance_Score.png)
+    *   [Fatigue (ATL) vs. Performance Score](figures/Fatigue_ATL,_day_pre-race_vs_Performance_Score.png)
+    *   [Form (Ramp Rate) vs. Performance Score](figures/Form_Ramp_Rate,_day_pre-race_vs_Performance_Score.png)
+    *   [Avg Resting HR vs. Performance Score](figures/Avg_Resting_HR_7-day_pre-race_vs_Performance_Score.png)
+    *   [Avg HRV vs. Performance Score](figures/Avg_HRV_7-day_pre-race_vs_Performance_Score.png)
+    *   [Avg Sleep Hours vs. Performance Score](figures/Avg_Sleep_hours,_7-day_pre-race_vs_Performance_Score.png)
+    *   [Power/Weight (W/kg) vs. Performance Score](figures/Power_Weight_W_kg_vs_Performance_Score.png)
+*   **Heatmap**: Provides a high-level summary of which factors have the strongest positive or negative correlation with your race results.
+    *   [Correlation Heatmap](figures/Xert_Correlations.png)
+*   **Dashboard**: Offers an instant visual of the most impactful correlations.
+    *   [Correlation Dashboard](figures/xert_correlation_dashboard.jpg)
 
 ---
 
