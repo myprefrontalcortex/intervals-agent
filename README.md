@@ -109,5 +109,23 @@ To enable others (or yourself!) to quickly reproduce the figures and analysis wi
     pip install -r requirements.txt
     ```
 
+### Data Setup
+
+To generate your own analysis figures, you'll need to prepare your data sources:
+
+1.  **Intervals.icu API Credentials**:
+    *   Create a `.env` file in the root of the project directory.
+    *   Inside the `.env` file, add your `INTERVALS_API_KEY` and `INTERVALS_ATHLETE_ID`. You can find your API key and Athlete ID within your Intervals.icu settings (usually under "Settings" -> "API" or "Profile" for the ID).
+    ```
+    INTERVALS_API_KEY=your_api_key_here
+    INTERVALS_ATHLETE_ID=your_athlete_id_here
+    ```
+
+2.  **Xert `.tcx` Files**:
+    *   Download your `.tcx` activity files from Xert.
+    *   Place all these `.tcx` files into the `Xert/` directory within the project.
+
+---
+
 ## 🤝 Contributing
 If you find ways to improve the correlation algorithms or add support for more platforms (like TrainingPeaks or Strava), feel free to open a Pull Request.
