@@ -1,8 +1,14 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 output_file = "C:/intervals-agent/race_analysis.csv"
+output_dir = "figures"
+
+# Ensure the output directory exists
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
 
 try:
     df = pd.read_csv(output_file)
@@ -49,7 +55,11 @@ try:
             plt.ylabel('Performance Score')
             plt.grid(True)
             plt.tight_layout()
-            plot_filename = f"C:/intervals-agent/{metric.replace(' ', '_').replace('(', '').replace(')', '').replace('/', '_')}_vs_Performance_Score.png"
+            
+            # Construct filename and save in the 'figures' directory
+            base_filename = f"{metric.replace(' ', '_').replace('(', '').replace(')', '').replace('/', '_')}_vs_Performance_Score.png"
+            plot_filename = os.path.join(output_dir, base_filename)
+            
             plt.savefig(plot_filename)
             plt.close()
             print(f"Saved plot: {plot_filename}")

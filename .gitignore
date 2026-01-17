@@ -244,3 +244,13 @@ race_analysis.csv
 xert_metrics.csv
 figures/
 .env
+
+# Untracked local analysis scripts
+analyze_chichibu.py
+analyze_kawasaki.py
+analyze_pooled_races.py
+compare_chichibu_wellness.py
+compare_pooled_wellness.py
+compare_selected_races.py
+identify_negative_performance_outliers.py
+identify_outliers.py
