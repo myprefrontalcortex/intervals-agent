@@ -140,11 +140,6 @@ venv/
 *.csv
 !race_analysis_with_xert.csv
 *.zip
-*.png
-*.jpg
-!figures/
-!figures/*.png
-!figures/*.jpg
 *.tcx
 
 # IDE settings
@@ -236,13 +231,6 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
-Avg_HRV_7-day_pre-race_vs_Performance_Score.png
-Avg_Resting_HR_7-day_pre-race_vs_Performance_Score.png
-Avg_Sleep_hours,_7-day_pre-race_vs_Performance_Score.png
-Fatigue_ATL,_day_pre-race_vs_Performance_Score.png
-Fitness_CTL,_day_pre-race_vs_Performance_Score.png
-Form_Ramp_Rate,_day_pre-race_vs_Performance_Score.png
-Power_Weight_W_kg_vs_Performance_Score.png
 .env
 
 # Untracked local analysis scripts
