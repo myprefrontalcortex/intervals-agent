@@ -42,6 +42,38 @@ The final step is to translate the numerical analysis into clear, easy-to-interp
 
 ---
 
+## 🧬 Data Provenance: How the CSVs are Made
+
+For this analysis to be reproducible, it's critical to understand how the foundational datasets are created. This happens in a three-stage pipeline:
+
+### **Step 1: Parsing Raw Power Data (`xert_metrics.csv`)**
+*   **Script**: `scripts/analyze_xert_tcx.py`
+*   **Input**: Raw `.tcx` files located in the `Xert/` directory.
+*   **Process**:
+    1.  The script scans the `Xert/` directory for all `.tcx` files.
+    2.  It parses the XML structure of each file to extract every recorded power and heart rate data point.
+    3.  For each file, it calculates summary statistics: Max/Average Power, Max/Average HR, and total duration.
+*   **Output**: A new file, `xert_metrics.csv`, containing a clean summary of the power data for each individual ride file, organized by date.
+
+### **Step 2: Fetching Race & Wellness Data (`race_analysis.csv`)**
+*   **Script**: `main.py`
+*   **Input**: A live connection to the **Intervals.icu API** (using credentials from your `.env` file).
+*   **Process**:
+    1.  It fetches your entire activity history and filters it, keeping only the activities flagged as a "Race".
+    2.  For each race, it queries the API again to get your wellness data (calculating the **7-day and 14-day averages** for Sleep, HRV, and Resting HR) and your fitness data (CTL, ATL for the day before the race).
+    3.  It calculates the custom **`Performance Score`** by normalizing and combining several in-race metrics (e.g., average speed, power-to-weight).
+*   **Output**: The script saves `race_analysis.csv`, a file containing *only* your race events, now enriched with pre-race wellness data and the crucial `Performance Score`.
+
+### **Step 3: Merging for the Final Dataset (`race_analysis_with_xert.csv`)**
+*   **Script**: `scripts/merge_xert_data.py`
+*   **Input**: The two files created above: `xert_metrics.csv` and `race_analysis.csv`.
+*   **Process**:
+    1.  It reads both files.
+    2.  It intelligently merges them by matching the `Date` column, attaching the detailed power data from Xert to the corresponding race events from Intervals.icu.
+*   **Output**: The script saves `race_analysis_with_xert.csv`. This is the final, master dataset that all plotting and analysis scripts use to generate the figures.
+
+---
+
 ## 🛠️ Getting Started
 
 ### Prerequisites
