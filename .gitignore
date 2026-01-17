@@ -142,6 +142,9 @@ venv/
 *.zip
 *.png
 *.jpg
+!figures/
+!figures/*.png
+!figures/*.jpg
 *.tcx
 
 # IDE settings
@@ -240,7 +243,6 @@ Fatigue_ATL,_day_pre-race_vs_Performance_Score.png
 Fitness_CTL,_day_pre-race_vs_Performance_Score.png
 Form_Ramp_Rate,_day_pre-race_vs_Performance_Score.png
 Power_Weight_W_kg_vs_Performance_Score.png
-figures/
 .env
 
 # Untracked local analysis scripts
