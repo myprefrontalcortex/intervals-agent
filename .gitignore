@@ -138,6 +138,7 @@ venv/
 
 # Data files
 *.csv
+!race_analysis_with_xert.csv
 *.zip
 *.png
 *.jpg
@@ -239,9 +240,6 @@ Fatigue_ATL,_day_pre-race_vs_Performance_Score.png
 Fitness_CTL,_day_pre-race_vs_Performance_Score.png
 Form_Ramp_Rate,_day_pre-race_vs_Performance_Score.png
 Power_Weight_W_kg_vs_Performance_Score.png
-race_analysis_with_xert.csv
-race_analysis.csv
-xert_metrics.csv
 figures/
 .env
 
